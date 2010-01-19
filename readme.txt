@@ -29,8 +29,7 @@ The configuration options include a player ID (this will go away in future versi
 
 == Screenshots ==
 
-1. Integrated into WYSIWYG editor with own video embedding icon.
-2. Choose video portal, insert video ID and link text, done.
-3. Select local video file, type in link text, done.
-4. Upload video files from within the plugin interface and insert it in the next step.
-5. Insert any possible video file by typing in it's URL and the demanded link text. Done.
+1. Icon in the WYSIWYG editor.
+2. Search for a video by title or description and get results.
+3. Preview the video.
+4. Embed it on your site.
