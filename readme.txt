@@ -3,8 +3,8 @@ Contributors: CydeSwype
 Donate link: http://www.vmix.com/
 Tags: embedding, video, embed, vmix
 Requires at least: 2.5
-Tested up to: 2.6
-Stable tag: 4.1
+Tested up to: 2.9.2
+Stable tag: 1.0
 
 Easy embedding of videos from VMIX.
 

@@ -39,9 +39,13 @@ function add_vmix_tinymce_plugin($plugin_array) {
 // init process for button control
 add_action('init', 'vmix_addbuttons');
 
+function vmix_scripts() {
+        echo '<script src="'.get_option('siteurl').'/wp-content/plugins/vmix/vmix.js"></script>';
+}
+
 function vmix_init() {
-	add_options_page('VMIX Video', 'VMIX Video', 'manage_options', 'vmix_options_page', 'vmix_option_page');
-	echo '<script src="'.get_option('siteurl').'/wp-content/plugins/vmix/vmix.js"></script>';
+        add_options_page('VMIX Video', 'VMIX Video', 'manage_options', 'vmix_options_page', 'vmix_option_page');
+        add_action('admin_print_scripts', 'vmix_scripts');
 }
 
 function vmix_option_page() {
