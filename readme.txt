@@ -23,6 +23,10 @@ If you don't have a VMIX account and would like to get one, visit http://vmix.co
 3. Unzip the contents of vmix.zip into the newly created vmix directory
 4. Activate the plugin through the 'Plugins' menu in WordPress
 
+== Frequently Asked Questions ==
+Q. How do I get my VMIX auth token?
+A. In the VMIX Admin Console, go to Applications -> Widgets and view the embed code for any widget there.  The atoken in the embed code will contain your auth token.
+
 == Configuration ==
 
 The configuration options include a player ID (this will go away in future versions when you'll be able to select a player instance when you embed each video) and an auth token.  Auth tokens can be copied from any widget.  Just log into the VMIX Admin Console and go to Applications -> Widgets and click on any of the widgets.  Then go to the "Embed Code" tab and look in the code for an "auth_token=xxxxx" and copy the value there.  Alternatively, if that's too cumbersome, contact your Client Service Manager and they'll get it for you.
