@@ -33,3 +33,14 @@ The configuration options include a player ID (this will go away in future versi
 2. Search for a video by title or description and get results.
 3. Preview the video.
 4. Embed it on your site.
+
+== Changelog ==
+
+= 1.0.1 =
+* Bug fix: JavaScript include being echoed in too many cases...was interrupting a PHP header directive on story submission
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+Bug fixes if you were experiencing PHP errors when trying to create/edit a story
+
