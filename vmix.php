@@ -4,7 +4,7 @@
 Plugin Name: VMIX
 Plugin URI: http://vmix.com/
 Description: Easy embedding of videos from VMIX <a href="options-general.php?page=vmix_options_page">Configure...</a>
-Version: 1.0.1
+Version: 1.0.2
 License: GPL
 Author: Ian D. Miller
 Author URI: http://vmix.com/
