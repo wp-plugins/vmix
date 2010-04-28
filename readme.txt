@@ -4,7 +4,7 @@ Donate link: http://www.vmix.com/
 Tags: embedding, video, embed, vmix
 Requires at least: 2.5
 Tested up to: 2.9.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 Easy embedding of videos from VMIX.
 
@@ -40,10 +40,18 @@ The configuration options include a player ID (this will go away in future versi
 
 == Changelog ==
 
+= 1.0.2 =
+* Added confirmation message when config options changed
+* Prettier preview player, bigger popup, added some nicer copy
+* Now closing the popup when video is embedded (assuming user is finished with the popup at that point)
+
 = 1.0.1 =
 * Bug fix: JavaScript include being echoed in too many cases...was interrupting a PHP header directive on story submission
 
 == Upgrade Notice ==
+
+= 1.0.2 =
+Minor bug fixes and features, messagine, copy, etc.
 
 = 1.0.1 =
 Bug fixes if you were experiencing PHP errors when trying to create/edit a story
