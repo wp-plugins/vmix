@@ -84,16 +84,16 @@ else
 
 ?>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title><?php echo _e('Embed VMIX Video','embeddedvideo'); ?></title>
 
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/tiny_mce_popup.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/mctabs.js"></script>
 <script language="javascript" type="text/javascript" src="<?php echo get_option('siteurl') ?>/wp-includes/js/tinymce/utils/form_utils.js"></script>
 <script language="javascript" type="text/javascript" src="embedded-video.js"></script>
 <style type="text/css">
-	#embeddedvideo .panel_wrapper, #embeddedvideo div.current {
-		height: 165px;
-		padding-top: 5px;
-	}
 	#portal_insert, #portal_cancel, #select_insert, #select_cancel, #upload_insert, #upload_cancel, #remote_insert, #remote_cancel {
 				font: 13px Verdana, Arial, Helvetica, sans-serif;
 				height: auto;
@@ -137,6 +137,7 @@ function vmix_insert_link(media_id){
 
 			ed.execCommand('mceInsertContent', false, str);
 			ed.execCommand('mceCleanup');
+			tinyMCEPopup.close();
 		});
 	}
 }
@@ -146,8 +147,8 @@ function vmix_preview(media_id){
 	$.getJSON(url, function(data){
 		var media_token = data.token;
 		var str = '<div id="vmix_preview_content">';
-		str += '<div><a href="#" onclick="$(\'#vmix_preview_content\').remove(); return false">close</a></div>';
-		str += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="250" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="name" value="player_swf"/><param name="allowScriptAccess" value="always"/><param name="flashvars" value="player_id=' + player_id + '&amp;token=' + media_token + '" /><param name="src" value="http://cdn-akm.vmixcore.com/core-flash/UnifiedVideoPlayer/UnifiedVideoPlayer.swf?player_id=' + player_id + '" /><param name="wmode" value="transparent" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="250" src="http://cdn-akm.vmixcore.com/core-flash/UnifiedVideoPlayer/UnifiedVideoPlayer.swf?player_id=' + player_id + '" allowfullscreen="true" wmode="transparent" allowScriptAccess="always" flashvars="player_id=' + player_id + '&amp;token=' + media_token + '" name="player_swf"></embed></object></div>';
+		str += '<div style="text-align:right; padding-bottom:6px; padding-right:6px"><a href="#" onclick="$(\'#vmix_preview_content\').remove(); return false" style="text-decoration:none"><b>X</b></a></div>';
+		str += '<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="320" height="240" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="name" value="player_swf"/><param name="allowScriptAccess" value="always"/><param name="flashvars" value="player_id=' + player_id + '&amp;token=' + media_token + '" /><param name="src" value="http://cdn-akm.vmixcore.com/core-flash/UnifiedVideoPlayer/UnifiedVideoPlayer.swf?player_id=' + player_id + '" /><param name="wmode" value="transparent" /><param name="allowfullscreen" value="true" /><embed type="application/x-shockwave-flash" width="320" height="240" src="http://cdn-akm.vmixcore.com/core-flash/UnifiedVideoPlayer/UnifiedVideoPlayer.swf?player_id=' + player_id + '" allowfullscreen="true" wmode="transparent" allowScriptAccess="always" flashvars="player_id=' + player_id + '&amp;token=' + media_token + '" name="player_swf"></embed></object></div>';
 
 		$('#vmix_preview').html(str);
 	});
@@ -176,10 +177,14 @@ function vmix_search(q){
 #vmix_preview {position:fixed}
 #vmix_preview_content {background:#fff; padding:3px; border:solid 1px #000}
 </style>
+</head>
+
+<body id="vmix">
 
 <?php if (get_option('vmix_atoken') && get_option('vmix_player_id')){ ?>
 <form onsubmit="vmix_search(this.q.value); return false">
-Search: <input type="text" name="q"/> <input type="submit" value="Search"/>
+Enter a term that appears in the title or description of the video you would like to embed.<br/><br/>
+Search: <input type="text" name="q"/> <input type="submit" value="Go"/>
 </form>
 
 <div id="vmix_preview">
@@ -196,5 +201,5 @@ It looks like you haven't set up your <a href="options-general.php?page=vmix_opt
 
 <?php } ?>
 
-
-
+</body>
+</html>

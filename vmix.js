@@ -5,7 +5,7 @@ function vmix_insert() {
 		tinyMCE.activeEditor.windowManager.open( {
 				url : tinyMCE.activeEditor.documentBaseURI + '../../../wp-content/plugins/vmix/vmix-popup.php?post='+postnumber,
 				width : 440,
-				height : 220,
+				height : 360,
 				resizable : 'no',
 				scrollbars : 'no',
 				inline : 'yes'

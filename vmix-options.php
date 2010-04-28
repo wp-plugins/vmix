@@ -1,14 +1,19 @@
 <?php
 
 if ( isset($_REQUEST['process']) ) {
-	update_option('vmix_atoken', wp_kses(stripslashes($_REQUEST['vmix_atoken']), array()));
-	update_option('vmix_player_id', wp_kses(stripslashes($_REQUEST['vmix_player_id']), array()));
+	update_option('vmix_atoken', wp_kses(stripslashes(trim($_REQUEST['vmix_atoken'])), array()));
+	update_option('vmix_player_id', wp_kses(stripslashes(trim($_REQUEST['vmix_player_id'])), array()));
+	$success = 1;
 }
 
 $vmix_atoken = get_option('vmix_atoken');
 $vmix_player_id = get_option('vmix_player_id');
 
 ?>
+
+<?php if ($success == 1){ ?>
+<div style="padding:10px; border:1px #090 solid; background:#efe; margin-top:10px">Successfully updated configuration for VMIX plugin</div>
+<?php } ?>
 
 <form method="post">
 
